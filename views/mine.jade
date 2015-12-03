@@ -1,8 +1,5 @@
-extends layout
+//- extends layout
 
-block head
-	div #{title}
-	
 block content
 	div.weui_cells_title.mgb40
 		div.weui_cells.weui_cells_access
@@ -18,7 +15,7 @@ block content
 							span 昵称：
 							span #{profile.nickname}
 				div.weui_cell_ft
-			a.weui_cell.ovhi.fs-14(href="/myCourse")
+			a.weui_cell.js_cell.ovhi.fs-14(href="javascript:;" data-id="myCourse")
 				div.introduce.pull-left
 					div
 						p 
@@ -30,7 +27,3 @@ block content
 						p 
 							span 关于
 				div.weui_cell_ft.lh60
-block footer
-	footer
-		a(href="/") 课程列表
-		a.active(href="/mine") 我的

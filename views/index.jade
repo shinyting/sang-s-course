@@ -4,22 +4,134 @@ block head
 	div #{title}
 
 block content
-	div.weui_cells_title.mgb40
-		each item in allItem
+	div(id="item0")
+		div.weui_cells_title
+			each item in allItem
+				div.weui_cells.weui_cells_access
+					a.js_cell.weui_cell.ovhi.fs-14(href="javascript:;" data-id="courseDetail")
+						div.weui_cell_hd.pull-left
+							img(src="images/#{item.pic}")
+						div.introduce.pull-left
+							div
+								p 
+									span 主题：
+									span #{item.title}
+							div 
+								p 
+									span 主讲人：
+									span #{item.author}
+	div(id="item1")
+		div.weui_cells_title.mgb40
 			div.weui_cells.weui_cells_access
-				a.weui_cell.ovhi.fs-14(href="/courseDetail")
+				a.weui_cell.ovhi.fs-14
 					div.weui_cell_hd.pull-left
-						img(src="images/#{item.pic}")
+						img(src="images/#{profile.pic}")
 					div.introduce.pull-left
 						div
 							p 
-								span 主题：
-								span #{item.title}
+								span #{profile.name}
 						div 
 							p 
-								span 主讲人：
-								span #{item.author}
+								span 昵称：
+								span #{profile.nickname}
+					div.weui_cell_ft
+				a.weui_cell.js_cell.ovhi.fs-14(href="javascript:;" data-id="myCourse")
+					div.introduce.pull-left
+						div
+							p 
+								span 我的课程
+					div.weui_cell_ft.lh60
+				a.weui_cell.js_cell.ovhi.fs-14(href="javascript:;" data-id="about")
+					div.introduce.pull-left
+						div
+							p 
+								span 关于
+					div.weui_cell_ft.lh60
 block footer
 	footer
-		a.active(href="/") 课程列表
-		a(href="mine") 我的
+		a.active(href="javascript:;" data-id="list") 课程列表
+		a(href="javascript:;" data-id="mine") 我的
+	//- script(type="text/html" id="tpl_mine")
+	//- 	div.content.page(id="mine")
+			//- div.weui_cells_title.mgb40
+			//- 	div.weui_cells.weui_cells_access
+			//- 		a.weui_cell.ovhi.fs-14
+			//- 			div.weui_cell_hd.pull-left
+			//- 				img(src="images/#{profile.pic}")
+			//- 			div.introduce.pull-left
+			//- 				div
+			//- 					p 
+			//- 						span #{profile.name}
+			//- 				div 
+			//- 					p 
+			//- 						span 昵称：
+			//- 						span #{profile.nickname}
+			//- 			div.weui_cell_ft
+			//- 		a.weui_cell.js_cell.ovhi.fs-14(href="javascript:;" data-id="myCourse")
+			//- 			div.introduce.pull-left
+			//- 				div
+			//- 					p 
+			//- 						span 我的课程
+			//- 			div.weui_cell_ft.lh60
+			//- 		a.weui_cell.js_cell.ovhi.fs-14(href="javascript:;" data-id="about")
+			//- 			div.introduce.pull-left
+			//- 				div
+			//- 					p 
+			//- 						span 关于
+			//- 			div.weui_cell_ft.lh60
+	//- script(type="text/html" id="tpl_list")
+	//- 	div.content.page(id="list")
+	//- 		div.weui_cells_title
+	//- 			each item in allItem
+	//- 				div.weui_cells.weui_cells_access
+	//- 					a.js_cell.weui_cell.ovhi.fs-14(href="javascript:;" data-id="courseDetail")
+	//- 						div.weui_cell_hd.pull-left
+	//- 							img(src="images/#{item.pic}")
+	//- 						div.introduce.pull-left
+	//- 							div
+	//- 								p 
+	//- 									span 主题：
+	//- 									span #{item.title}
+	//- 							div 
+	//- 								p 
+	//- 									span 主讲人：
+	//- 									span #{item.author}
+	script(type="text/html" id="tpl_courseDetail")
+		div.content.page(id="courseDetail")
+			div.about
+				div.about-pic
+					img(src="images/fir.jpg")
+				div.about-des
+					p 主讲人：
+					p 主题：
+					p 介绍：
+				div.pay.ovhi
+					p.pull-left 价格：
+						span
+					button.pull-right.weui_btn.weui_btn_mini.weui_btn_primary 支付
+	script(type="text/html" id="tpl_myCourse")
+		div.content.page(id="myCourse")
+			div.weui_cells_title
+				each item in myItem
+					div.weui_cells.weui_cells_access
+						a.weui_cell.ovhi.fs-14
+							div.weui_cell_hd.pull-left
+								img(src="images/#{item.pic}")
+							div.introduce.pull-left
+								div
+									p 
+										span 主题：
+										span #{item.title}
+								div 
+									p 
+										span 主讲人：
+										span #{item.author}
+	script(type="text/html" id="tpl_about")
+		div.content.page(id="about")
+			div.about
+				div.about-pic
+					img(src="images/fir.jpg")
+				div.about-des
+					p 这是一个简单的app
+					p 用于演示
+					p 作者：桑世龙

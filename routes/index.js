@@ -4,18 +4,20 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', {
-    title: '所有课程',
-    allItem: [{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"express", "author":"人"}]
+    title: '课程系统',
+    profile: {"pic":"fir.jpg", "name":"主题", "nickname":"主讲人"},
+    allItem: [{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"},{"pic":"fir.jpg", "title":"express", "author":"人"}],
+    myItem: [{"pic":"fir.jpg", "title":"主题mine", "author":"主讲人mine"},{"pic":"fir.jpg", "title":"主题", "author":"主讲人"}]
   });
 });
 
 /* GET mine page. */
-router.get('/mine', function (req, res, next) {
-  res.render('mine', {
-    title: '我的',
-    profile: {"pic":"fir.jpg", "name":"主题", "nickname":"主讲人"}
-  });
-});
+// router.get('/mine', function (req, res, next) {
+//   res.render('mine', {
+//     title: '我的',
+//     profile: {"pic":"fir.jpg", "name":"主题", "nickname":"主讲人"}
+//   });
+// });
 
 /* GET myCourse page. */
 router.get('/myCourse', function (req, res, next) {

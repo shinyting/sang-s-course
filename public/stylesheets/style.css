@@ -2,6 +2,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #888;
+  background-color: #fff;
 }
 
 a {
@@ -47,9 +48,6 @@ header {
 	background: #d82a3e;
 	color: #fff;
 }
-.content {
-	margin-top: 40px;
-}
 footer {
 	width: 100%;
 	position: fixed;
@@ -84,6 +82,9 @@ footer a.active {
 }
 .introduce p {
 	line-height: 40px;
+}
+#item1 {
+	display: none;
 }
 
 /*about page style*/
@@ -121,4 +122,42 @@ footer a.active {
 .weui_cell_ft {
 	float: right;
 	line-height: 100px;
+} 
+.page {
+	position: static;
+	background-color: #fff;
+}
+
+/*iscroll style*/
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 40px;
+	bottom: 40px;
+	left: 0;
+	width: 100%;
+	background: #fff;
+	overflow: hidden;
+}
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+	background: #fff;
 }

@@ -9,11 +9,23 @@ $(function () {
     $container.on('click', '.js_cell[data-id]', function () {
         var id = $(this).data('id');
         go(id);
+        if (id != "mine" && id != "list") {
+            $container.find('footer').hide();
+        }
     });
 
     // location.hash = '#hash1' 和点击后退都会触发`hashchange`，这个demo页面只关心后退
     $(window).on('hashchange', function (e) {
-        if (/#.+/gi.test(e.newURL)) {
+        var targetURLArray = e.newURL.split('#');
+
+        var targetURLString;
+        if (targetURLArray.length > 1) {
+            targetURLString = targetURLArray[targetURLArray.length-1];
+        } 
+        // if (/#.+/gi.test(e.newURL)) {
+        //     return;
+        // }
+        if (targetURLString == stack[stack.length-1].attr('id')) {
             return;
         }
         var $top = stack.pop();
@@ -25,11 +37,20 @@ $(function () {
         }).on('webkitAnimationEnd', function () {
             $top.remove();
         });
+        if (stack.length) {
+            var $next = stack[stack.length-1];
+            $($next).show();
+        }
+        else {
+            $('#main').show();
+            $('footer').show();
+        }
     });
 
     function go(id){
         var $tpl = $($('#tpl_' + id).html()).addClass('slideIn').addClass(id);
-        $container.append($tpl);
+        $container.find('#scroller').append($tpl);
+        $($tpl).siblings().hide();
         stack.push($tpl);
         // why not use `history.pushState`, https://github.com/weui/weui/issues/26
         //history.pushState({id: id}, '', '#' + id);

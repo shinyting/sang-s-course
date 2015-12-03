@@ -1,19 +1,26 @@
 doctype html
 html
 	head
-		title
+		title course
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0")
+		link(rel="stylesheet" type="text/css" href="assets/bower_components/weui/dist/example/example.css")
 		link(rel="stylesheet" type="text/css" href="assets/bower_components/weui/dist/style/weui.css")
 		link(rel="stylesheet" type="text/css" href="stylesheets/style.css")
 		script(type="text/javascript" src="assets/bower_components/zepto/zepto.min.js")
 		script(type="text/javascript" src="assets/bower_components/iscroll/build/iscroll.js")
-		script.
-			var myscroll=new iScroll("#wrapper");
-	body
-		div
+		script(type="text/javascript" src="assets/bower_components/weui/src/example/example.js")
+		script(type="text/javascript" src="javascripts/main.js")
+	body(onload="loaded()" ontouchstart)
+		div.js_container
 			header
 				block head
 			div(id="wrapper")
-				div.content
-					block content
+				div(id="scroller")
+					div.content.page(id="main")
+						block content
 			block footer
+		script.
+			var myScroll;
+			function loaded () {
+				myScroll = new IScroll('#wrapper', {click: true});
+			}
