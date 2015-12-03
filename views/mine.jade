@@ -1,0 +1,36 @@
+extends layout
+
+block head
+	div #{title}
+	
+block content
+	div.weui_cells_title.mgb40
+		div.weui_cells.weui_cells_access
+			a.weui_cell.ovhi.fs-14
+				div.weui_cell_hd.pull-left
+					img(src="images/#{profile.pic}")
+				div.introduce.pull-left
+					div
+						p 
+							span #{profile.name}
+					div 
+						p 
+							span 昵称：
+							span #{profile.nickname}
+				div.weui_cell_ft
+			a.weui_cell.ovhi.fs-14(href="/myCourse")
+				div.introduce.pull-left
+					div
+						p 
+							span 我的课程
+				div.weui_cell_ft.lh60
+			a.weui_cell.ovhi.fs-14(href="/about")
+				div.introduce.pull-left
+					div
+						p 
+							span 关于
+				div.weui_cell_ft.lh60
+block footer
+	footer
+		a(href="/") 课程列表
+		a.active(href="/mine") 我的

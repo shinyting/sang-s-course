@@ -1,0 +1,25 @@
+extends layout
+
+block head
+	div #{title}
+
+block content
+	div.weui_cells_title.mgb40
+		each item in allItem
+			div.weui_cells.weui_cells_access
+				a.weui_cell.ovhi.fs-14(href="/courseDetail")
+					div.weui_cell_hd.pull-left
+						img(src="images/#{item.pic}")
+					div.introduce.pull-left
+						div
+							p 
+								span 主题：
+								span #{item.title}
+						div 
+							p 
+								span 主讲人：
+								span #{item.author}
+block footer
+	footer
+		a.active(href="/") 课程列表
+		a(href="mine") 我的

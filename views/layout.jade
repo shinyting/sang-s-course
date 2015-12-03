@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+		title
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0")
+		link(rel="stylesheet" type="text/css" href="assets/bower_components/weui/dist/style/weui.css")
+		link(rel="stylesheet" type="text/css" href="stylesheets/style.css")
+		script(type="text/javascript" src="assets/bower_components/zepto/zepto.min.js")
+		script(type="text/javascript" src="assets/bower_components/iscroll/build/iscroll.js")
+		script.
+			var myscroll=new iScroll("#wrapper");
+	body
+		div
+			header
+				block head
+			div(id="wrapper")
+				div.content
+					block content
+			block footer

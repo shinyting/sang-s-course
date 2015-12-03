@@ -1,0 +1,124 @@
+/*common style*/
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #888;
+}
+
+a {
+  color: #00B7FF;
+}
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+.display-block {
+	display: block;
+}
+.ovhi {
+	overflow: hidden;
+}
+.mgl10 {
+	margin-left: 10px;
+}
+.mgb40 {
+	margin-bottom: 40px;
+}
+.mgt10 {
+	margin-top: 10px;
+}
+.mgtn40 {
+	margin-top: -40px;
+}
+.fs-14 {
+	font-size: 14px;
+}
+.lh60 {
+	line-height: 60px !important;
+}
+
+header {
+	position: fixed;
+	top: 0px;
+	line-height: 40px;
+	width: 100%;
+	text-align: center;
+	background: #d82a3e;
+	color: #fff;
+}
+.content {
+	margin-top: 40px;
+}
+footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	height: 40px;
+	overflow: hidden;
+}
+footer a {
+	display: inline-block;
+	width: 50%;
+	background: #ececec;
+	border: none;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #888;
+	font-size: 14px;
+}
+footer a.active {
+	background: #d82a3e;
+	color: #fff;
+}
+/*index style*/
+.weui_cell_hd img {
+	display: block;
+	width: 100px;
+	height: 100px;
+}
+.introduce {
+	margin-left: 10px;
+	padding: 10px;
+}
+.introduce p {
+	line-height: 40px;
+}
+
+/*about page style*/
+.about {
+	width: 100%;
+}
+.about-pic img {
+	display: block;
+	width: 100%;
+}
+.about-des {
+	padding: 10px;
+}
+.about-des p {
+	line-height: 30px;
+}
+
+/*courseDetail page style*/
+.pay {
+	padding: 10px;
+}
+
+/*reset weui style*/
+.weui_cells_title {
+	padding-left: 0px;
+	padding-right: 0px;
+	border-top: 1px solid #ececec;
+}
+.weui_cells {
+	margin-top: 0px;
+}
+.weui_cells:before {
+	border-top: none;
+}
+.weui_cell_ft {
+	float: right;
+	line-height: 100px;
+}
